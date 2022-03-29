@@ -1,0 +1,299 @@
+:root {
+  --height: 93vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+/* ! body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+body {
+  display: grid;
+  grid-template-columns: 7fr 23fr;
+  background-color: rgb(240, 242, 245);
+}
+section {
+  height: 100vh;
+}
+#left-section {
+  display: flex;
+  flex-direction: column;
+}
+/* ! left-sections ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.left-sections {
+  background-color: white;
+  margin: 0 5px 5px 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(159, 207, 235);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.left-sections > h3 {
+  border-bottom: 1px solid black;
+  padding: 2px 5px;
+}
+.left-sections > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+  padding: 0 5px;
+}
+/* ! online-users ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#online-users {
+  height: 32.5vh;
+}
+.users-div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px 3px;
+  border-bottom: 1px solid rgb(143, 233, 255);
+}
+.users-div img {
+  width: 40px;
+  margin: 3px;
+}
+.users-div div {
+  width: calc(100% - 41px);
+}
+.users-div div p {
+  max-width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ! recent-chats ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#recent-chats {
+  height: 32.5vh;
+}
+.badge {
+  background: #5bc8e3;
+  aspect-ratio: 1/1;
+  border-radius: 43px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  display: none;
+  font-weight: 600;
+}
+/* ! user-details ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#user-details {
+  min-height: 120px;
+  margin-bottom: 0;
+}
+#user-details div div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#user-details div div img {
+  width: 70px;
+}
+#user-details div p {
+  margin-top: 3px;
+}
+
+/* ! logs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#logs {
+  height: calc(35vh - 120px);
+}
+#logs p {
+  padding: 3px 0;
+  border-bottom: 1px solid rgb(148, 234, 255);
+}
+img {
+  width: 40px;
+}
+/* ! right-sections ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#right-section {
+  background-color: white;
+}
+/* ! top-bar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#top-bar {
+  background-color: rgb(224, 243, 255);
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#chater {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#chater > img {
+  margin: 7px;
+  width: 40px;
+}
+#top-bar > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.btn {
+  background-color: rgb(148, 234, 255);
+  border: none;
+  border-radius: 7px;
+  margin-right: 7px;
+  padding: 10px 1px;
+}
+.btn a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+}
+.extras-btn {
+  display: none;
+  line-height: 0;
+  height: 40px;
+  aspect-ratio: 1/1;
+}
+.extras-btn span {
+  font-size: 20px;
+}
+.btn:hover {
+  background-color: rgb(143, 233, 255);
+  border: 1px solid rgb(31, 39, 41);
+  border-radius: 5px;
+  padding: 9px 0px;
+  box-shadow: 0 0 10px 1px rgba(87, 179, 202, 0.158);
+}
+/* !bottom-area ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#bottom-area {
+  height: calc(100vh - 55px);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+/* !chat-box ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* !message-box ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#message-box {
+  height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  padding: 0px 40px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+#message-box div:nth-child(1) {
+  flex: 1 0 auto;
+}
+
+#message-box div {
+  margin: 5px 0;
+  display: flex;
+}
+#message-box div span {
+  max-width: 450px;
+  font-size: 18px;
+  overflow-wrap: break-word;
+}
+.recipant-message {
+  align-self: flex-start;
+}
+.recipant-message span {
+  background-color: rgb(163, 200, 255);
+  padding: 7px;
+  border-radius: 0 5px 5px;
+}
+.recipant-message svg {
+  color: rgb(163, 200, 255);
+}
+.sender-message {
+  flex-direction: row-reverse;
+  align-self: flex-end;
+}
+.sender-message span {
+  background-color: rgb(92, 162, 255);
+  padding: 7px;
+  border-radius: 5px 0 5px 5px;
+}
+.sender-message svg {
+  color: rgb(92, 162, 255);
+  transform: rotateY(180deg);
+}
+/* !message-input ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#message-input {
+  background-color: rgb(224, 243, 255);
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#message-input button {
+  line-height: 0;
+  border: none;
+  background-color: transparent;
+}
+
+#message-input button span {
+  font-size: 28px;
+  color: rgb(96, 98, 100);
+}
+#message-input button span:hover {
+  color: rgb(44, 45, 46);
+}
+
+#message-input span {
+  line-height: 0;
+  border: none;
+  background-color: transparent;
+}
+
+#message-input span span {
+  font-size: 28px;
+  color: rgb(96, 98, 100);
+}
+#message-input span span:hover {
+  color: rgb(44, 45, 46);
+}
+
+#message-input input {
+  padding: 7px 10px;
+  width: 80%;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 0 10px 1px rgba(140, 232, 255, 0.493);
+  font-size: 18px;
+  outline: none;
+}
+#message-input input:focus {
+  box-shadow: 0 0 10px 2px rgba(127, 229, 255, 0.637);
+}
+#message-input input::placeholder {
+  padding: 4px;
+}
+/* ! Emoji box */
+#emojis {
+  border: 1px solid rgb(175, 234, 252);
+  border-radius: 10px;
+  background-color: rgba(199, 242, 255, 0.822);
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  max-height: 25vh;
+  overflow-y: scroll;
+  margin: 5px;
+  position: absolute;
+  bottom: 58px;
+  padding: 3px;
+  display: none;
+  width: 34vw
+}
+
+#emojis span {
+  font-size: 24px;
+  padding: 5px;
+}
+/* !game-box     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#game-box {
+  background-color: slategray;
+  display: none;
+}

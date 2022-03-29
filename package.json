@@ -1,0 +1,41 @@
+{
+  "name": "temporary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puru-khedre/chatApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puru-khedre/chatApp/issues"
+  },
+  "homepage": "https://github.com/puru-khedre/chatApp#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "~3.2.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.1",
+    "express-session": "^1.17.2",
+    "http": "0.0.1-security",
+    "mongodb": "^3.6.1",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-github": "^1.1.0",
+    "passport-local": "^1.0.0",
+    "passport.socketio": "^3.7.0",
+    "pug": "^3.0.2",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

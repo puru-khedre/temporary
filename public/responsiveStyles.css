@@ -1,0 +1,50 @@
+/* ! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* ! ~~~~~~~~~~~~~~~ Responsive design ~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* ! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media (max-width: 450px) {
+  body {
+    display: unset;
+  }
+  #left-section {
+    display: none;
+  }
+  section {
+    height: var(--height);
+  }
+  /* #logs {
+    display: none;
+  } */
+  #bottom-area {
+    height: calc(var(--height) - 55px);
+  }
+  #message-box {
+    height: calc(var(--height) - 110px);
+  }
+
+  .btn:nth-child(1) {
+    display: none;
+  }
+  .extras-btn {
+    display: unset;
+    height: 30px;
+  }
+  #message-box {
+    padding: 0 15px;
+  }
+  #message-box div span {
+    max-width: 300px;
+  }
+  .btn {
+    padding: 5px 1px;
+  }
+  .btn a {
+    padding: 5px 10px;
+  }
+  .btn:hover {
+    padding: 4px 0;
+  }
+  #emojis {
+    width: unset;
+  }
+}

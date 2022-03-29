@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="../public/responsiveStyles.css">
+</head>
+
+<body>
+    <section id="left-section">
+        <div id="online-users" class="left-sections">
+            <h3>Online users</h3>
+            <div>
+            </div>
+        </div>
+        <div id="recent-chats" class="left-sections">
+            <h3>Recent chats</h3>
+            <div></div>
+        </div>
+        <div id="logs" class="left-sections">
+            <h3>Logs</h3>
+            <div>
+            </div>
+        </div>
+        <div id="user-details" class="left-sections">
+            <h3>User details</h3>
+            <div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="right-section">
+        <div id="top-bar">
+            <div id="chater">
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div>
+                <button class="btn"><a href="#">Quick play</a></button>
+                <button class="btn"><a href="/logout">Logout</a></button>
+                <button class="extras-btn btn" onclick="showExtra()"><span
+                        class="material-icons-outlined">menu</span></button>
+
+            </div>
+        </div>
+        <div id="bottom-area">
+            <div id="chat-box">
+                <div id="message-box">
+                    <div></div>
+                </div>
+                <div>
+                    <form action="javascript:void(0);" id="message-input" onsubmit="sendMessage();">
+                        <span onclick="showEmojiBox()"><span class="material-icons-round">sentiment_satisfied_alt</span></span>
+                        <input type="text" name="" id="" placeholder="Type a message">
+                        <button type="submit"><span class="material-icons-round">send</span></button>
+                    </form>
+                </div>
+                <div id="emojis">
+                    <span onclick="enterEmoji(this)">😃</span><span onclick="enterEmoji(this)">😆</span>
+                    <span onclick="enterEmoji(this)">😅</span><span onclick="enterEmoji(this)">🤣</span>
+                    <span onclick="enterEmoji(this)">😂</span><span onclick="enterEmoji(this)">🙂</span>
+                    <span onclick="enterEmoji(this)">😉</span><span onclick="enterEmoji(this)">😊</span>
+                    <span onclick="enterEmoji(this)">😇</span><span onclick="enterEmoji(this)">🥰</span>
+                    <span onclick="enterEmoji(this)">😍</span><span onclick="enterEmoji(this)">🤩</span>
+                    <span onclick="enterEmoji(this)">😘</span><span onclick="enterEmoji(this)">😗</span>
+                    <span onclick="enterEmoji(this)">😚</span><span onclick="enterEmoji(this)">🥲</span>
+                    <span onclick="enterEmoji(this)">😋</span><span onclick="enterEmoji(this)">😜</span>
+                    <span onclick="enterEmoji(this)">🤪</span><span onclick="enterEmoji(this)">😝</span>
+                    <span onclick="enterEmoji(this)">🤑</span><span onclick="enterEmoji(this)">🤭</span>
+                    <span onclick="enterEmoji(this)">🤫</span><span onclick="enterEmoji(this)">🤔</span>
+                    <span onclick="enterEmoji(this)">🤐</span><span onclick="enterEmoji(this)">🤗</span>
+                    <span onclick="enterEmoji(this)">🤨</span><span onclick="enterEmoji(this)">😏</span>
+                    <span onclick="enterEmoji(this)">🙄</span><span onclick="enterEmoji(this)">😬</span>
+                    <span onclick="enterEmoji(this)">🤒</span><span onclick="enterEmoji(this)">😪</span>
+                    <span onclick="enterEmoji(this)">😴</span><span onclick="enterEmoji(this)">😷</span>
+                    <span onclick="enterEmoji(this)">🤮</span><span onclick="enterEmoji(this)">🤧</span>
+                    <span onclick="enterEmoji(this)">🤕</span><span onclick="enterEmoji(this)">🤢</span>
+                    <span onclick="enterEmoji(this)">😵</span><span onclick="enterEmoji(this)">🤠</span>
+                    <span onclick="enterEmoji(this)">🥳</span><span onclick="enterEmoji(this)">🥵</span>
+                    <span onclick="enterEmoji(this)">🤓</span><span onclick="enterEmoji(this)">😨</span>
+                    <span onclick="enterEmoji(this)">😰</span><span onclick="enterEmoji(this)">😭</span>
+                    <span onclick="enterEmoji(this)">😖</span><span onclick="enterEmoji(this)">😫</span>
+                    <span onclick="enterEmoji(this)">🥱</span><span onclick="enterEmoji(this)">🤬</span>
+                    <span onclick="enterEmoji(this)">🙊</span><span onclick="enterEmoji(this)">😻</span>
+                    <span onclick="enterEmoji(this)">🙈</span><span onclick="enterEmoji(this)">🙉</span>
+                    <span onclick="enterEmoji(this)">💞</span><span onclick="enterEmoji(this)">❣</span>
+                    <span onclick="enterEmoji(this)">💋</span><span onclick="enterEmoji(this)">💝</span>
+                    <span onclick="enterEmoji(this)">💦</span><span onclick="enterEmoji(this)">💨</span>
+                    <span onclick="enterEmoji(this)">💣</span><span onclick="enterEmoji(this)">💔</span>
+                    <span onclick="enterEmoji(this)">👌</span><span onclick="enterEmoji(this)">🤌</span>
+                    <span onclick="enterEmoji(this)">🤏</span><span onclick="enterEmoji(this)">✌</span>
+                    <span onclick="enterEmoji(this)">🤟</span><span onclick="enterEmoji(this)">🤙</span>
+                    <span onclick="enterEmoji(this)">👉</span><span onclick="enterEmoji(this)">👍</span>
+                    <span onclick="enterEmoji(this)">🙏</span><span onclick="enterEmoji(this)">👎</span>
+                    <span onclick="enterEmoji(this)">👊</span>
+                </div>
+            </div>
+            <div id="game-box">
+                <div>
+                    <span>
+                        <svg viewBox="0 0 8 13" width="8" height="13" class="">
+                            <path opacity=".13" fill="#0000000"
+                                d="M1.533 3.568 8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path>
+                            <path fill="currentColor" d="M1.533 2.568 8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span>hii recipant</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../public/userDetails.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src='/socket.io/socket.io.js'></script>
+    <script src="../public/sockets.js"></script>
+    <script src="../public/recentChats.js"></script>
+    <script src="../public/chatArea.js"></script>
+</body>
+
+</html>

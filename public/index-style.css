@@ -1,0 +1,90 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+body {
+  height: 94vh;
+  background-color: rgb(236, 238, 240);
+  display: grid;
+  place-items: center;
+}
+.container {
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.164);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  min-width: 350px;
+}
+#log-sign {
+  display: flex;
+  flex-direction: column;
+}
+#log-sign button {
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  background-color: rgb(25, 230, 76);
+  font-size: 1.1rem;
+  margin: 10px 0;
+  cursor: pointer;
+}
+#log-sign button:focus {
+  border: 2px ridge rgb(25, 230, 76);
+  margin: 8px -2px;
+}
+.form-input {
+  padding: 8px 12px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  margin: 5px 0;
+  border: 1px solid rgb(70, 183, 235);
+}
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 8px 1px rgba(0, 81, 255, 0.26);
+}
+.seperator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.seperator div {
+  width: 45%;
+  border-bottom: 1px solid rgb(112, 112, 112);
+  height: 0px;
+  margin-bottom: -1px;
+}
+a {
+  text-decoration: none;
+  color: rgb(24, 194, 66);
+  font-weight: 700;
+}
+a[href="#log-sign"] {
+  color: black;
+}
+a[href="#log-sign"]:focus {
+  color: rgb(24, 194, 66);
+}
+#avatar-input {
+  display: none;
+}
+#avatar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.116);
+  padding: 7px;
+  border-radius: 10px;
+  background-color: rgb(247, 251, 253);
+  position: relative;
+  top: 3px;
+}
+#avatar-container img {
+  border-radius: 50%;
+  width: 55px;
+  margin: 4px;
+  border: 1px solid rgb(219, 219, 219);
+}
+#error-message{
+  color: red;
+}

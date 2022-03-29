@@ -1,0 +1,66 @@
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title #{title}
+    link(rel='stylesheet' href='../public/index-style.css')
+  body
+
+    if showLogin
+      main
+        .container
+          h2 Log in
+          form#log-sign(action='/login' method='post')
+            input.form-input(type='text' required placeholder='username' name='username')
+            input.form-input(type='password' required name='password' placeholder='password')
+            button(type='submit') Log in
+          a(href='#log-sign') Forgot password?
+          .seperator
+            div
+            | or
+            div
+          p
+            | Need an account? 
+            a(href='/createNew') Sign up
+
+    if showSignUp
+      main
+        .container
+          h2 Sign Up
+          form#log-sign(action='/signUp' method='post')
+            input.form-input(type='text' required='' placeholder='Enter Name' name='name')
+            input.form-input(type='text' required='' placeholder='Enter unique username' name='username')
+            input.form-input(type='password' name='password' placeholder='Enter password')
+            input.form-input(type='number' name='age' required='' placeholder='Enter age')
+            input.form-input(type='text' readonly='' placeholder='Choose Avatar')
+            input#avatar-input.form-input(type='number' name='img')
+            #avatar-container
+              img(src='/getAvatar/1' onclick='setImgInput(this)' name='1' alt='')
+              img(src='/getAvatar/2' onclick='setImgInput(this)' name='2' alt='')
+              img(src='/getAvatar/3' onclick='setImgInput(this)' name='3' alt='')
+              img(src='/getAvatar/4' onclick='setImgInput(this)' name='4' alt='')
+              img(src='/getAvatar/5' onclick='setImgInput(this)' name='5' alt='')
+              img(src='/getAvatar/6' onclick='setImgInput(this)' name='6' alt='')
+              img(src='/getAvatar/7' onclick='setImgInput(this)' name='7' alt='')
+              img(src='/getAvatar/8' onclick='setImgInput(this)' name='8' alt='')
+              img(src='/getAvatar/9' onclick='setImgInput(this)' name='9' alt='')
+              img(src='/getAvatar/10' onclick='setImgInput(this)' name='10' alt='')
+
+            button(type='submit' value='puru') Sign up
+          .seperator
+            div
+            | or
+            div
+          p
+            | Already have an account? 
+            a(href='/') Log in
+
+    if showError
+          main
+            .container
+              h2#error-message Error happened
+              p
+                | #{message}
+    script(async, defer, src='../public/index-script.js')
+    
