@@ -29,7 +29,7 @@ socket.on("user", (user) => {
   let reciever = document.querySelector("#chater").getAttribute("username");
 
   if (!user.connected) {
-    let div = document.querySelector(`.users-div[username=${user.username}]`);
+    let div = document.querySelector(`.users-div[username='${user.username}']`);
     div.remove();
   }
 });
@@ -40,22 +40,43 @@ socket.on("chat-message", (message) => {
   }
 
   let userInRecent = document.querySelector(
-    `.users-div[username=${message.sender}][child-of="recent-chats"]`
+    `.users-div[username='${message.sender}'][child-of="recent-chats"]`
   );
-  userInRecent.children[1].children[1].innerHTML = message.message;
-  if (message.sender !== recipant) {
-    let userInOnline = document.querySelector(
-      `.users-div[username=${message.sender}][child-of="online-users"]`
-    );
-    if (userInRecent) {
-      +userInRecent.children[2].innerHTML++;
-      userInRecent.children[2].style.display = "grid";
-      document.querySelector("#recent-chats>div").prepend(userInRecent);
+  let userInOnline = document.querySelector(
+    `.users-div[username='${message.sender}'][child-of="online-users"]`
+  );
+  document.querySelector("#online-users>div").prepend(userInOnline);
+
+  if (recipant === message.sender) {
+    if (!userInRecent) {
+      setUserDiv(recipant, avatar, nameOfUser, message.message, "recent-chats");
     }
-    if (userInOnline) {
-      userInOnline.children[2].innerHTML = "";
-      userInOnline.children[2].style.display = "grid";
-      document.querySelector("#online-users>div").prepend(userInOnline);
+  } else {
+    userInOnline.children[2].style.display = "grid";
+    userInOnline.children[2].innerHTML = "";
+
+    if (!userInRecent) {
+      let img = userInOnline.children[0].src.match(/\d+/g)[1];
+      let nameOfUser = userInOnline.children[1].children[0].innerHTML;
+      userInRecent = setUserDiv(
+        message.sender,
+        img,
+        nameOfUser,
+        message.message,
+        "recent-chats"
+      );
+
+      userInRecent.children[2].style.display = "grid";
+      +userInRecent.children[2].innerHTML++;
+    } else {
+      userInRecent.children[2].style.display = "grid";
+      +userInRecent.children[2].innerHTML++;
+      document.querySelector("#recent-chats>div").prepend(userInOnline);
     }
   }
+  userInRecent = document.querySelector(
+    `.users-div[username='${message.sender}'][child-of="recent-chats"]`
+  );
+  userInRecent.children[1].children[1].innerHTML = message.message;
 });
+

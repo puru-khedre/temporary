@@ -9,8 +9,22 @@ fetch("/getRecentChats")
           .then((obj) => {
             let avatar = obj.avatar;
             let name = obj.name;
-            let message = chat.message.slice(-1)[0].message;
-            setUserDiv(reciever, avatar, name, message, "recent-chats");
+            let message = chat.message.slice(-1)[0];
+            message.sender === sender
+              ? setUserDiv(
+                  reciever,
+                  avatar,
+                  name,
+                  "<strong>you: </strong>" + message.message,
+                  "recent-chats"
+                )
+              : setUserDiv(
+                  reciever,
+                  avatar,
+                  name,
+                  message.message,
+                  "recent-chats"
+                );
           });
       }
     });
@@ -29,4 +43,5 @@ function setUserDiv(username, avatar, name, message, parent) {
   div.innerHTML += `<div><h3>${name}</h3>
   ${message ? `<p>${message}</p>` : ``}</div><span class="badge">0</span>`;
   document.querySelector(`#${parent} div`).prepend(div);
+  return div;
 }

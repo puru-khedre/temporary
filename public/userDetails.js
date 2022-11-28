@@ -1,5 +1,5 @@
 let sender, recipant;
-let avatar, names;
+let avatar, nameOfUser;
 let messageBox = document.querySelector("#message-box");
 
 fetch("/getUsername")
@@ -12,7 +12,7 @@ fetch("/getUsername")
       .then((details) => {
         setUserDetails(recipant, details.name, details.avatar, details.age);
         avatar = details.avatar;
-        names = details.name;
+        nameOfUser = details.name;
         setTopBar(details.avatar, details.name, false);
       });
 
