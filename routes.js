@@ -1,5 +1,5 @@
 const passport = require("passport");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 module.exports = (app, myDataBase, chatDB) => {
   app.get("/", (req, res) => {
@@ -37,6 +37,7 @@ module.exports = (app, myDataBase, chatDB) => {
               name: body.name,
               username: body.username,
               password: bcrypt.hashSync(body.password, 12),
+              // password: body.password,
               avatar: body.img,
               age: body.age,
             },

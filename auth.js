@@ -1,5 +1,5 @@
 require("dotenv").config();
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const GithubStrategy = require("passport-github").Strategy;
@@ -26,7 +26,7 @@ module.exports = function (app, myDataBase) {
         if (!user) {
           return done(null, false);
         }
-        if (!bcrypt.compareSync(password, user.password)) {
+        if (!(bcrypt.compareSync(password, user.password))) {
           return done(null, false);
         }
         return done(null, user);
